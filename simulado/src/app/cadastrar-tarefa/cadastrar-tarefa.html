@@ -1,0 +1,18 @@
+<div class="caixa">
+  <h2>Cadastrar Tarefa</h2>
+
+  <p>
+    <label>Tarefa: </label>
+    <input type="text" [(ngModel)]="nome">
+  </p>
+
+  <p>
+    <label>Prazo: </label>
+    <input type="date" [(ngModel)]="prazo">
+  </p>
+
+  <button (click)="cadastrar()">Cadastrar</button>
+
+  <br><br>
+  <a routerLink="/lista">Ir para Lista de Tarefas</a>
+</div>

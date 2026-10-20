@@ -1,0 +1,25 @@
+<div class="caixa">
+  <h2>Lista de Tarefas</h2>
+
+  <p>
+    Total: {{ total() }} | Concluídas: {{ concluidas() }} | Pendentes: {{ pendentes() }}
+  </p>
+
+  @if (tarefas.length === 0) {
+    <p>Nenhuma tarefa cadastrada</p>
+  } @else {
+    <ul>
+      @for (tarefa of tarefas; track tarefa.id) {
+        <li class="item-tarefa">
+          <span [class.riscada]="tarefa.concluida">
+            {{ tarefa.nome }} - Prazo: {{ tarefa.prazo }}
+          </span>
+          <button class="btn-concluir" (click)="concluir(tarefa.id)">Concluir</button>
+          <button class="btn-remover" (click)="remover(tarefa.id)">Remover</button>
+        </li>
+      }
+    </ul>
+  }
+
+  <a routerLink="/cadastrar">Voltar para o Cadastro</a>
+</div>
